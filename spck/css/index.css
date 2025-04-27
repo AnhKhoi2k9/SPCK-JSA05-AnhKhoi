@@ -50,55 +50,7 @@ button {
     text-decoration: underline;
   }
   
-  /* Dropdown Menu */
-  .dropdown {
-    position: relative;
-  }
-  
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: white;
-    color: #333;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    display: flex;
-    gap: 20px;
-    z-index: 1000;
-  }
-  
-  .dropdown:hover .dropdown-content {
-    display: flex;
-  }
-  
-  .dropdown-column {
-    width: 200px;
-  }
-  
-  .dropdown-column h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 5px;
-  }
-  
-  .dropdown-column ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .dropdown-column ul li {
-    margin-bottom: 8px;
-    font-size: 14px;
-  }
-  
-  .dropdown-column ul li:hover {
-    text-decoration: underline;
-    cursor: pointer;
-  }
+
   
   /* Hero Section */
   .hero-section {
@@ -138,3 +90,201 @@ button {
     color: white;
     margin-top: 20px;
   }
+  /* Carousel Styles */
+.carousel {
+  position: relative;
+  width: 80%;
+  margin: 50px auto;
+  overflow: hidden;
+}
+
+.carousel-track-container {
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+  min-width: 100%;
+  text-align: center;
+}
+
+.carousel-slide img {
+  width: 200px;
+  height: 300px;
+  object-fit: cover;
+  margin: 0 auto;
+}
+
+.carousel-slide p {
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.carousel-btn.prev {
+  left: 10px;
+}
+
+.carousel-btn.next {
+  right: 10px;
+}
+
+.carousel-btn:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+/* Famous Authors Section */
+.famous-authors {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: #f9f9f9;
+}
+
+.famous-authors h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.author-list {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.author-item {
+  text-align: center;
+  width: 150px;
+}
+
+.author-item img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.author-item p {
+  font-size: 16px;
+  font-weight: bold;
+  /* Author Info Section */
+.author-info {
+  text-align: center;
+  padding: 20px;
+  margin-top: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  display: none; /* Ẩn phần thông tin tác giả mặc định */
+}
+
+.author-info h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.author-info p {
+  font-size: 16px;
+  color: #555;
+}
+}
+/* New Books Section */
+.new-books {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: #f4f4f4;
+}
+
+.new-books h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.book-list {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.book-item {
+  text-align: center;
+  width: 150px;
+}
+
+.book-item img {
+  width: 100px;
+  height: 150px;
+  object-fit: cover;
+  margin-bottom: 10px;
+  border-radius: 8px;
+}
+
+.book-item p {
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+.book-item .price {
+  font-size: 14px;
+  color: #007bff;
+  font-weight: bold;
+}
+
+/* Dropdown Menu */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown a {
+  text-decoration: none;
+  color: white;
+  padding: 10px 15px;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 200px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 10px 15px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover a {
+  background-color: #0056b3;
+}

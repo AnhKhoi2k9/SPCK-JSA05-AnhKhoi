@@ -20,62 +20,118 @@
     </div>
     <div class="nav-links">
       <a href="./index.html">Trang Chủ</a>
+      
+      <!-- Dropdown Menu for "Mục Lục" -->
       <div class="dropdown">
-        <a href="#">Danh Mục Sách <i class="fa-solid fa-chevron-down"></i></a>
+        <a href="#">Mục Lục <i class="fa-solid fa-chevron-down"></i></a>
         <div class="dropdown-content">
-          <div class="dropdown-column">
-            <h3>Hư cấu</h3>
-            <ul>
-              <li>Văn học hiện đại</li>
-              <li>Văn học kinh điển</li>
-              <li>Văn học thiếu nhi</li>
-              <li>Lãng mạn</li>
-              <li>Kỳ ảo</li>
-              <li>Trinh thám - Kinh dị</li>
-            </ul>
-          </div>
-          <div class="dropdown-column">
-            <h3>Phi hư cấu</h3>
-            <ul>
-              <li>Triết học</li>
-              <li>Sử học</li>
-              <li>Khoa học</li>
-              <li>Kinh doanh</li>
-              <li>Kỹ năng</li>
-              <li>Nghệ thuật</li>
-            </ul>
-          </div>
-          <div class="dropdown-column">
-            <h3>Thiếu nhi</h3>
-            <ul>
-              <li>0-5 tuổi</li>
-              <li>6-8 tuổi</li>
-              <li>9-12 tuổi</li>
-              <li>13-15 tuổi</li>
-            </ul>
-          </div>
-          <div class="dropdown-column">
-            <h3>Phân loại khác</h3>
-            <ul>
-              <li>Sách bán chạy</li>
-              <li>Sách mới xuất bản</li>
-              <li>Sách sắp xuất bản</li>
-              <li>Sách được giải thưởng</li>
-              <li>Phụ kiện - Quà tặng</li>
-            </ul>
-          </div>
+          <a href="#">Văn học hiện đại</a>
+          <a href="#">Văn học kinh điển</a>
+          <a href="#">Khoa học viễn tưởng</a>
+          <a href="#">Trinh thám - Kinh dị</a>
+          <a href="#">Sách thiếu nhi</a>
+          <a href="#">Sách kỹ năng</a>
         </div>
       </div>
+
       <a href="./about.html">Về Chúng Tôi</a>
       <a href="./contact.html">Liên Hệ</a>
       <a href="./login.html">Đăng Xuất</a>
     </div>
   </div>
+    <!-- Carousel Section -->
+  <div class="carousel">
+    <button class="carousel-btn prev"><i class="fa-solid fa-chevron-left"></i></button>
+    <div class="carousel-track-container">
+      <ul class="carousel-track">
+        <li class="carousel-slide">
+          <img src="https://reviewsach.net/wp-content/uploads/2018/12/review-sach-dac-nhan-tam.jpg" alt="Book 1">
+          <p>Đắc Nhân Tâm</p>
+        </li>
+        <li class="carousel-slide">
+          <img src="https://salt.tikicdn.com/cache/w1200/ts/product/38/bb/4b/5f03392a2fb98bc19b63de688b2ad218.jpg" alt="Book 2">
+          <p>Cuốn Sách 2</p>
+        </li>
+        <li class="carousel-slide">
+          <img src="https://motcuonsach.com/wp-content/uploads/2021/05/cuon-sach-ca-phe-cung-tony.jpg" alt="Book 3">
+          <p>Cuốn Sách 3</p>
+        </li>
+        <li class="carousel-slide">
+          <img src="https://nld.mediacdn.vn/2018/3/24/sach-1521858607292758740290.jpg" alt="Book 4">
+          <p>Cuốn Sách 4</p>
+        </li>
+      </ul>
+    </div>
+    <button class="carousel-btn next"><i class="fa-solid fa-chevron-right"></i></button>
+  </div>
+
+  <!-- Famous Authors Section -->
+<div class="famous-authors">
+  <h2>Các Tác Giả Nổi Tiếng</h2>
+  <div class="author-list">
+    <div class="author-item" onclick="showAuthorInfo('Nguyễn Nhật Ánh', 'Nguyễn Nhật Ánh là một nhà văn nổi tiếng của Việt Nam, chuyên viết truyện cho thiếu nhi và thanh thiếu niên.')">
+      <img src="https://vcdn1-giaitri.vnecdn.net/2022/01/14/nguyen-nhat-anh-1-1642147020-8611-1642148269.jpg?w=1200&h=0&q=100&dpr=1&fit=crop&s=PdHfC3j8U4t4Z1ekJj21zw" alt="Nguyễn Nhật Ánh">
+      <p>Nguyễn Nhật Ánh</p>
+    </div>
+    <div class="author-item" onclick="showAuthorInfo('J.K. Rowling', 'J.K. Rowling là tác giả của bộ truyện Harry Potter nổi tiếng trên toàn thế giới.')">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSl5OdAFDjJJLfItn5I-mYZAIyNZzVA9kDKRQ&s" alt="J.K. Rowling">
+      <p>J.K. Rowling</p>
+    </div>
+    <div class="author-item" onclick="showAuthorInfo('George Orwell', 'George Orwell là tác giả của các tác phẩm kinh điển như 1984 và Animal Farm.')">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRk1I31raDp6qGl54UpXC08N4tkQ7fZnEKlaA&s" alt="George Orwell">
+      <p>George Orwell</p>
+    </div>
+    <div class="author-item" onclick="showAuthorInfo('Paulo Coelho', 'Paulo Coelho là tác giả của cuốn sách nổi tiếng Nhà Giả Kim.')">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQW49SsVG8RTA4o1bl0RQDJJSontishZ2mbnQ&s" alt="Paulo Coelho">
+      <p>Paulo Coelho</p>
+    </div>
+    <div class="author-item" onclick="showAuthorInfo('Dale Carnegie', 'Dale Carnegie là tác giả của cuốn sách Đắc Nhân Tâm, một trong những cuốn sách bán chạy nhất mọi thời đại.')">
+      <img src="https://nguoinoitieng.tv/images/nnt/85/0/a3hj.jpg" alt="Dale Carnegie">
+      <p>Dale Carnegie</p>
+    </div>
+  </div>
+</div>
+
+<!-- Author Info Section -->
+<div class="author-info" id="author-info">
+  <h2 id="author-name"></h2>
+  <p id="author-description"></p>
+</div>
+
+<!-- New Books Section -->
+<div class="new-books">
+  <h2>Sách Mới</h2>
+  <div class="book-list">
+    <div class="book-item">
+      <img src="https://salt.tikicdn.com/cache/w1200/ts/product/38/bb/4b/5f03392a2fb98bc19b63de688b2ad218.jpg" alt="Book 1">
+      <p>Cuốn Sách Mới 1</p>
+      <p class="price">Giá: 100.000đ</p>
+    </div>
+    <div class="book-item">
+      <img src="https://motcuonsach.com/wp-content/uploads/2021/05/cuon-sach-ca-phe-cung-tony.jpg" alt="Book 2">
+      <p>Cuốn Sách Mới 2</p>
+      <p class="price">Giá: 120.000đ</p>
+    </div>
+    <div class="book-item">
+      <img src="https://reviewsach.net/wp-content/uploads/2018/12/review-sach-dac-nhan-tam.jpg" alt="Book 3">
+      <p>Cuốn Sách Mới 3</p>
+      <p class="price">Giá: 150.000đ</p>
+    </div>
+    <div class="book-item">
+      <img src="https://nld.mediacdn.vn/2018/3/24/sach-1521858607292758740290.jpg" alt="Book 4">
+      <p>Cuốn Sách Mới 4</p>
+      <p class="price">Giá: 200.000đ</p>
+    </div>
+  </div>
+</div>
 
   
 
   <footer>
     <p>Copyright &copy; 2025 SáchHay</p>
   </footer>
+
+  <script src="js/carousel.js"></script>
+  <script src="js/info.js"></script>
 </body>
 </html>
