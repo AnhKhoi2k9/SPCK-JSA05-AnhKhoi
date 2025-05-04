@@ -184,7 +184,9 @@ button {
 .author-item p {
   font-size: 16px;
   font-weight: bold;
-  /* Author Info Section */
+}
+
+/* Author Info Section */
 .author-info {
   text-align: center;
   padding: 20px;
@@ -193,6 +195,10 @@ button {
   border: 1px solid #ddd;
   border-radius: 8px;
   display: none; /* Ẩn phần thông tin tác giả mặc định */
+}
+
+.author-info img {
+  margin-bottom: 10px;
 }
 
 .author-info h2 {
@@ -204,7 +210,7 @@ button {
   font-size: 16px;
   color: #555;
 }
-}
+
 /* New Books Section */
 .new-books {
   text-align: center;
@@ -286,5 +292,34 @@ button {
 }
 
 .dropdown:hover a {
+  background-color: #0056b3;
+}
+
+.nav-links .cart-link {
+  color: white;
+  font-size: 16px;
+  margin-left: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.nav-links .cart-link i {
+  margin-right: 5px;
+}
+
+.buy-now-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.buy-now-btn:hover {
   background-color: #0056b3;
 }

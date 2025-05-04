@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Giỏ Hàng</title>
+  <link rel="stylesheet" href="css/cart.css">
+</head>
+<body>
+  <div class="cart-container">
+    <h1>Giỏ Hàng</h1>
+    <table class="cart-table">
+      <thead>
+        <tr>
+          <th>Sản Phẩm</th>
+          <th>Giá</th>
+          <th>Số Lượng</th>
+          <th>Tổng</th>
+          <th>Hành Động</th>
+        </tr>
+      </thead>
+      <tbody id="cart-items">
+        <!-- Các sản phẩm sẽ được thêm vào đây bằng JavaScript -->
+      </tbody>
+    </table>
+    <div class="cart-summary">
+      <h2>Tổng Cộng: <span id="cart-total">0đ</span></h2>
+      <button id="checkout-btn">Thanh Toán</button>
+    </div>
+  </div>
+  <script src="js/cart.js"></script>
+</body>
+</html>

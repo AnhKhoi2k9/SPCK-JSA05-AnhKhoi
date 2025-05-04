@@ -37,6 +37,9 @@
       <a href="./about.html">Về Chúng Tôi</a>
       <a href="./contact.html">Liên Hệ</a>
       <a href="./login.html">Đăng Xuất</a>
+<a href="./cart.html" class="cart-link">
+        <i class="fa-solid fa-cart-shopping"></i> Giỏ Hàng
+      </a>
     </div>
   </div>
     <!-- Carousel Section -->
@@ -89,11 +92,33 @@
       <img src="https://nguoinoitieng.tv/images/nnt/85/0/a3hj.jpg" alt="Dale Carnegie">
       <p>Dale Carnegie</p>
     </div>
+
+    <div class="author-item" onclick="showAuthorInfo('Haruki Murakami', 'Haruki Murakami là một nhà văn Nhật Bản nổi tiếng với các tác phẩm như Rừng Nauy và Kafka Bên Bờ Biển.')">
+      <img src="https://bookish.vn/wp-content/uploads/2020/03/haruki-murakami-time-100-2015-1.jpg" alt="Haruki Murakami">
+      <p>Haruki Murakami</p>
+    </div>
+    <div class="author-item" onclick="showAuthorInfo('Leo Tolstoy', 'Leo Tolstoy là một nhà văn Nga nổi tiếng với các tác phẩm kinh điển như Chiến Tranh và Hòa Bình và Anna Karenina.')">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjuUnP-d1dIYtbGFnAT4q89iXzXzpDTEeBQQ&s" alt="Leo Tolstoy">
+      <p>Leo Tolstoy</p>
+    </div>
+    <div class="author-item" onclick="showAuthorInfo('Gabriel García Márquez', 'Gabriel García Márquez là một nhà văn Colombia, tác giả của tác phẩm Trăm Năm Cô Đơn.')">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/0/0f/Gabriel_Garcia_Marquez.jpg"> 
+      <p>Gabriel García Márquez</p>
+    </div>
+    <div class="author-item" onclick="showAuthorInfo('Jane Austen', 'Jane Austen là một nhà văn Anh nổi tiếng với các tác phẩm như Kiêu Hãnh và Định Kiến.')">
+      <img src="https://cdn.britannica.com/12/172012-050-DAA7CE6B/Jane-Austen-Cassandra-engraving-portrait-1810.jpg" alt="Jane Austen">
+      <p>Jane Austen</p>
+    </div>
+    <div class="author-item" onclick="showAuthorInfo('Mark Twain', 'Mark Twain là một nhà văn Mỹ nổi tiếng với các tác phẩm như Những Cuộc Phiêu Lưu của Tom Sawyer và Huckleberry Finn.')">
+      <img src="https://vcdn1-giaitri.vnecdn.net/2015/05/06/A-1-4912-1430878417.jpg?w=460&h=0&q=100&dpr=2&fit=crop&s=9-lFFwJckErPA0flDIkS6Q" alt="Mark Twain">
+      <p>Mark Twain</p>
+    </div>
   </div>
-</div>
+  </div>
 
 <!-- Author Info Section -->
-<div class="author-info" id="author-info">
+<div class="author-info" id="author-info" style="display: none;">
+  <img id="author-image" src="" alt="Author Image" style="width: 150px; height: 150px; border-radius: 50%; margin-bottom: 10px;">
   <h2 id="author-name"></h2>
   <p id="author-description"></p>
 </div>
@@ -106,21 +131,29 @@
       <img src="https://salt.tikicdn.com/cache/w1200/ts/product/38/bb/4b/5f03392a2fb98bc19b63de688b2ad218.jpg" alt="Book 1">
       <p>Cuốn Sách Mới 1</p>
       <p class="price">Giá: 100.000đ</p>
+<button class="buy-now-btn">Mua Ngay</button>
+<button class="add-to-cart-btn" data-name="Cuốn Sách Mới 1" data-price="100000">Thêm vào giỏ hàng</button>
     </div>
     <div class="book-item">
       <img src="https://motcuonsach.com/wp-content/uploads/2021/05/cuon-sach-ca-phe-cung-tony.jpg" alt="Book 2">
       <p>Cuốn Sách Mới 2</p>
       <p class="price">Giá: 120.000đ</p>
+<button class="buy-now-btn">Mua Ngay</button>
+<button class="add-to-cart-btn" data-name="Cuốn Sách Mới 2" data-price="120000">Thêm vào giỏ hàng</button>
     </div>
     <div class="book-item">
       <img src="https://reviewsach.net/wp-content/uploads/2018/12/review-sach-dac-nhan-tam.jpg" alt="Book 3">
       <p>Cuốn Sách Mới 3</p>
       <p class="price">Giá: 150.000đ</p>
+<button class="buy-now-btn">Mua Ngay</button>
+<button class="add-to-cart-btn" data-name="Cuốn Sách Mới 3" data-price="150000">Thêm vào giỏ hàng</button>
     </div>
     <div class="book-item">
       <img src="https://nld.mediacdn.vn/2018/3/24/sach-1521858607292758740290.jpg" alt="Book 4">
       <p>Cuốn Sách Mới 4</p>
       <p class="price">Giá: 200.000đ</p>
+<button class="buy-now-btn">Mua Ngay</button>
+<button class="add-to-cart-btn" data-name="Cuốn Sách Mới 4" data-price="200000">Thêm vào giỏ hàng</button>
     </div>
   </div>
 </div>
