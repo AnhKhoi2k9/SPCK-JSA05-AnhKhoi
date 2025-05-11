@@ -1,33 +1,252 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Giỏ Hàng</title>
-  <link rel="stylesheet" href="css/cart.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giỏ Hàng - SáchHay</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        .cart-container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        .cart-items {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 20px;
+        }
+
+        .cart-item {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .cart-item:last-child {
+            border-bottom: none;
+        }
+
+        .cart-item img {
+            width: 80px;
+            height: 120px;
+            object-fit: cover;
+            margin-right: 20px;
+            border-radius: 4px;
+        }
+
+        .item-details {
+            flex-grow: 1;
+        }
+
+        .item-name {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .item-price {
+            color: #007bff;
+            font-weight: bold;
+        }
+
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 0 20px;
+        }
+
+        .quantity-btn {
+            background: #f0f0f0;
+            border: none;
+            width: 30px;
+            height: 30px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .quantity-btn:hover {
+            background: #e0e0e0;
+        }
+
+        .remove-btn {
+            background: #ff4444;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .remove-btn:hover {
+            background: #cc0000;
+        }
+
+        .cart-summary {
+            margin-top: 20px;
+            text-align: right;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .total-price {
+            font-size: 24px;
+            font-weight: bold;
+            color: #007bff;
+        }
+
+        .checkout-btn {
+            background: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-size: 18px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        .checkout-btn:hover {
+            background: #218838;
+        }
+
+        .empty-cart {
+            text-align: center;
+            padding: 40px;
+            font-size: 18px;
+            color: #666;
+        }
+    </style>
 </head>
 <body>
-  <div class="cart-container">
-    <h1>Giỏ Hàng</h1>
-    <table class="cart-table">
-      <thead>
-        <tr>
-          <th>Sản Phẩm</th>
-          <th>Giá</th>
-          <th>Số Lượng</th>
-          <th>Tổng</th>
-          <th>Hành Động</th>
-        </tr>
-      </thead>
-      <tbody id="cart-items">
-        <!-- Các sản phẩm sẽ được thêm vào đây bằng JavaScript -->
-      </tbody>
-    </table>
-    <div class="cart-summary">
-      <h2>Tổng Cộng: <span id="cart-total">0đ</span></h2>
-      <button id="checkout-btn">Thanh Toán</button>
+    <!-- Navbar -->
+    <div class="navbar">
+        <a href="./index.html" class="logo">
+            <span>Sách<span class="highlight">Hay</span></span>
+        </a>
+
+        <div class="search-container">
+            <input type="text" placeholder="Search..." id="search-bar">
+            <button id="search-btn" onclick="handleSearch()"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+        <div class="nav-links">
+            <a href="./index.html">Trang Chủ</a>
+            <div class="dropdown">
+                <a href="#">Mục Lục <i class="fa-solid fa-chevron-down"></i></a>
+                <div class="dropdown-content">
+                    <a href="#">Văn học hiện đại</a>
+                    <a href="#">Văn học kinh điển</a>
+                    <a href="#">Khoa học viễn tưởng</a>
+                    <a href="#">Trinh thám - Kinh dị</a>
+                    <a href="#">Sách thiếu nhi</a>
+                    <a href="#">Sách kỹ năng</a>
+                </div>
+            </div>
+            <a href="./about.html">Về Chúng Tôi</a>
+            <a href="./contact.html">Liên Hệ</a>
+            <a href="./login.html">Đăng Xuất</a>
+            <a href="./cart.html" class="cart-link">
+                <i class="fa-solid fa-cart-shopping"></i> Giỏ Hàng
+            </a>
+        </div>
     </div>
-  </div>
-  <script src="js/cart.js"></script>
+
+    <div class="cart-container">
+        <div class="cart-items" id="cart-items">
+            <!-- Cart items will be displayed here -->
+        </div>
+        <div class="cart-summary" id="cart-summary">
+            <!-- Cart summary will be displayed here -->
+        </div>
+    </div>
+
+    <footer>
+        <p>Copyright &copy; 2025 SáchHay</p>
+    </footer>
+
+    <script src="scripts/cart.js"></script>
+    <script>
+        // Function to render cart items
+        function renderCart() {
+            const cartItems = document.getElementById('cart-items');
+            const cartSummary = document.getElementById('cart-summary');
+            const items = JSON.parse(localStorage.getItem('cart')) || [];
+
+            if (items.length === 0) {
+                cartItems.innerHTML = '<div class="empty-cart">Giỏ hàng của bạn đang trống</div>';
+                cartSummary.innerHTML = '';
+                return;
+            }
+
+            let cartHTML = '';
+            let total = 0;
+
+            items.forEach((item, index) => {
+                const itemTotal = item.price * item.quantity;
+                total += itemTotal;
+                // Remove cover image, only show name and info
+                cartHTML += `
+                    <div class="cart-item">
+                        <div class="item-details">
+                            <div class="item-name">${item.name}</div>
+                            <div class="item-price">${item.price.toLocaleString('vi-VN')}đ</div>
+                        </div>
+                        <div class="quantity-controls">
+                            <button class="quantity-btn" onclick="updateQuantity(${index}, -1)">-</button>
+                            <span>${item.quantity}</span>
+                            <button class="quantity-btn" onclick="updateQuantity(${index}, 1)">+</button>
+                        </div>
+                        <button class="remove-btn" onclick="removeItem(${index})">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                `;
+            });
+
+            cartItems.innerHTML = cartHTML;
+            cartSummary.innerHTML = `
+                <div class="total-price">Tổng cộng: ${total.toLocaleString('vi-VN')}đ</div>
+                <button class="checkout-btn" onclick="checkout()">Thanh Toán</button>
+            `;
+        }
+
+        // Function to update item quantity
+        function updateQuantity(index, change) {
+            const items = JSON.parse(localStorage.getItem('cart')) || [];
+            items[index].quantity += change;
+            
+            if (items[index].quantity <= 0) {
+                items.splice(index, 1);
+            }
+            
+            localStorage.setItem('cart', JSON.stringify(items));
+            renderCart();
+        }
+
+        // Function to remove item
+        function removeItem(index) {
+            const items = JSON.parse(localStorage.getItem('cart')) || [];
+            items.splice(index, 1);
+            localStorage.setItem('cart', JSON.stringify(items));
+            renderCart();
+        }
+
+        // Function to handle checkout
+        function checkout() {
+            alert('Cảm ơn bạn đã mua hàng!');
+            localStorage.removeItem('cart');
+            renderCart();
+        }
+
+        // Initialize cart on page load
+        document.addEventListener('DOMContentLoaded', renderCart);
+    </script>
 </body>
 </html>

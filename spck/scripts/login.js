@@ -23,8 +23,8 @@ if (localStorage.getItem("currentUser")) {
   
       if (existingUser) {
         localStorage.setItem("currentUser", JSON.stringify(existingUser));
-  
-        location.href = "/index.html";
+        localStorage.setItem('isLoggedIn', 'true');
+        window.location.href = 'index.html';
       } else {
         alert("Email or password is incorrect");
       }

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tìm kiếm tác giả - SáchHay</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        .author-result { margin: 20px 0; padding: 15px; background: #fff; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.07);}
+        .author-name { font-size: 20px; font-weight: bold; }
+        .author-birth { color: #888; }
+        .author-works { margin-top: 10px; }
+        .author-works ul { margin: 0; padding-left: 20px; }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <!-- ... navbar như các trang khác ... -->
+        <a href="./index.html" class="logo">
+            <span>Sách<span class="highlight">Hay</span></span>
+        </a>
+        <div class="search-container">
+            <input type="text" placeholder="Tìm tác giả..." id="author-search-bar">
+            <button id="author-search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+        <div class="nav-links">
+            <a href="./index.html">Trang Chủ</a>
+            <a href="./about.html">Về Chúng Tôi</a>
+            <a href="./cart.html" class="cart-link">
+                <i class="fa-solid fa-cart-shopping"></i> Giỏ Hàng
+            </a>
+        </div>
+    </div>
+
+    <div class="container" style="max-width: 800px; margin: 80px auto 40px;">
+        <div id="author-results"></div>
+    </div>
+
+    <footer>
+        <p>Copyright &copy; 2025 SáchHay</p>
+    </footer>
+    <script src="scripts/author.js"></script>
+    <script>
+        // Nếu có ?search=... trên URL thì tự động tìm kiếm
+        document.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            const search = params.get('search');
+            if (search) {
+                document.getElementById('author-search-bar').value = search;
+                document.getElementById('author-search-btn').click();
+            }
+        });
+    </script>
+</body>
+</html>
