@@ -86,6 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 alert('Bạn cần đăng nhập để mua hàng');
                 return false;
             }
+            alert('Bạn đã thêm vào giỏ hàng')
             const name = e.target.dataset.name;
             const price = parseInt(e.target.dataset.price);
             const coverId = e.target.dataset.coverId || null;

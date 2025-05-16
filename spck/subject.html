@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thể loại sách</title>
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+  <div class="navbar">
+    <a href="./index.html" class="logo">
+      <span>Sách<span class="highlight">Hay</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="./index.html">Trang Chủ</a>
+      <a href="./about.html">Về Chúng Tôi</a>
+      <a href="./contact.html">Liên Hệ</a>
+      <a href="./login.html" id="login-logout-link">Đăng nhập</a>
+      <a href="./cart.html" class="cart-link" id="cart-link" style="display: none;">
+        <i class="fa-solid fa-cart-shopping"></i> Giỏ Hàng
+        <span id="cart-count" class="cart-count">0</span>
+      </a>
+    </div>
+  </div>
+  <div class="subject-container">
+    <h2 id="subject-title">Thể loại</h2>
+    <div id="subject-books" class="book-list"></div>
+  </div>
+  <footer>
+    <p>Copyright &copy; 2025 SáchHay</p>
+  </footer>
+  <script src="scripts/subject.js"></script>
+</body>
+</html> 

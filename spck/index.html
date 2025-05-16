@@ -23,14 +23,72 @@
       
       <!-- Dropdown Menu for "Mục Lục" -->
       <div class="dropdown">
-        <a href="#">Mục Lục <i class="fa-solid fa-chevron-down"></i></a>
-        <div class="dropdown-content">
-          <a href="#">Văn học hiện đại</a>
-          <a href="#">Văn học kinh điển</a>
-          <a href="#">Khoa học viễn tưởng</a>
-          <a href="#">Trinh thám - Kinh dị</a>
-          <a href="#">Sách thiếu nhi</a>
-          <a href="#">Sách kỹ năng</a>
+        <a href="#" id="catalog-nav-trigger">Mục Lục <i class="fa-solid fa-chevron-down"></i></a>
+        <div class="dropdown-content" id="catalog-nav-menu">
+          <div class="main-catalog">
+            <div class="catalog-column">
+              <h3 class="catalog-title fiction">Hư cấu</h3>
+              <ul>
+                <li><a href="subject.html?subject=modern_literature">Văn học hiện đại</a></li>
+                <li><a href="subject.html?subject=classic_literature">Văn học kinh điển</a></li>
+                <li><a href="subject.html?subject=children">Văn học thiếu nhi</a></li>
+                <li><a href="subject.html?subject=romance">Lãng mạn</a></li>
+                <li><a href="subject.html?subject=fantasy">Kỳ ảo</a></li>
+                <li><a href="subject.html?subject=detective">Trinh thám - Kinh dị</a></li>
+                <li><a href="subject.html?subject=science_fiction">Khoa học Viễn tưởng</a></li>
+                <li><a href="subject.html?subject=adventure">Phiêu lưu ly kỳ</a></li>
+                <li><a href="subject.html?subject=essays">Tản văn</a></li>
+                <li><a href="subject.html?subject=graphic_novels">Truyện tranh (graphic novel)</a></li>
+                <li><a href="subject.html?subject=picture_books">Sách tranh (Picture book)</a></li>
+                <li><a href="subject.html?subject=poetry">Thơ - kịch</a></li>
+                <li><a href="subject.html?subject=light_novel">Light novel</a></li>
+                <li><a href="subject.html?subject=coloring_books">Sách tô màu</a></li>
+              </ul>
+            </div>
+            <div class="catalog-column">
+              <h3 class="catalog-title nonfiction">Phi hư cấu</h3>
+              <ul>
+                <li><a href="subject.html?subject=philosophy">Triết học</a></li>
+                <li><a href="subject.html?subject=history">Sử học</a></li>
+                <li><a href="subject.html?subject=science">Khoa học</a></li>
+                <li><a href="subject.html?subject=business">Kinh doanh</a></li>
+                <li><a href="subject.html?subject=economics">Kinh tế chính trị</a></li>
+                <li><a href="subject.html?subject=personal_development">Kỹ năng</a></li>
+                <li><a href="subject.html?subject=art">Nghệ thuật</a></li>
+                <li><a href="subject.html?subject=parenting">Nuôi dạy con</a></li>
+                <li><a href="subject.html?subject=essays">Tiểu luận - phê bình</a></li>
+                <li><a href="subject.html?subject=applied_psychology">Tâm lý ứng dụng</a></li>
+                <li><a href="subject.html?subject=psychology">Tâm lý học</a></li>
+                <li><a href="subject.html?subject=biography">Hồi ký</a></li>
+                <li><a href="subject.html?subject=health">Y học - Sức khỏe</a></li>
+                <li><a href="subject.html?subject=religion">Tâm linh - Tôn giáo</a></li>
+              </ul>
+            </div>
+            <div class="catalog-column">
+              <h3 class="catalog-title children">Thiếu nhi</h3>
+              <ul>
+                <li><a href="subject.html?subject=children_0_5">0-5 tuổi</a></li>
+                <li><a href="subject.html?subject=children_6_8">6-8 tuổi</a></li>
+                <li><a href="subject.html?subject=children_9_12">9-12 tuổi</a></li>
+                <li><a href="subject.html?subject=children_13_15">13-15 tuổi</a></li>
+              </ul>
+            </div>
+            <div class="catalog-column">
+              <h3 class="catalog-title other">Phân loại khác</h3>
+              <ul>
+                <li><a href="subject.html?subject=bestsellers">Sách bán chạy</a></li>
+                <li><a href="subject.html?subject=new_releases">Sách mới xuất bản</a></li>
+                <li><a href="subject.html?subject=coming_soon">Sách sắp xuất bản</a></li>
+                <li><a href="subject.html?subject=award_winners">Sách được giải thưởng</a></li>
+                <li><a href="subject.html?subject=pop_up_books">Sách pop-up, lift-the-flaps</a></li>
+                <li><a href="subject.html?subject=vietnamese_studies">Nghiên cứu Việt Nam</a></li>
+                <li><a href="subject.html?subject=vietnamese_classics">Việt Nam danh tác</a></li>
+                <li><a href="subject.html?subject=vietnamese_authors">Tác giả Việt Nam</a></li>
+                <li><a href="subject.html?subject=special_editions">Bản đặc biệt</a></li>
+                <li><a href="subject.html?subject=accessories">Phụ kiện - Quà tặng</a></li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -42,7 +100,8 @@
       </a>
     </div>
   </div>
-    <!-- Carousel Section -->
+
+  <!-- Carousel Section -->
   <div class="carousel">
     <button class="carousel-btn prev"><i class="fa-solid fa-chevron-left"></i></button>
     <div class="carousel-track-container">
@@ -88,6 +147,7 @@
   <script src="scripts/famousAuthors.js"></script>
   <script src="scripts/newBooks.js"></script>
   <script>
+    
     function handleSearch() {
       const query = document.getElementById('search-bar').value.trim();
       if (query) {
@@ -114,6 +174,9 @@
           localStorage.setItem('isLoggedIn', 'false');
           updateLoginLogoutLink();
           alert('Bạn đã đăng xuất!');
+          localStorage.removeItem('isLoggedIn');
+          localStorage.removeItem('currentUser');
+          
         };
       } else {
         link.textContent = 'Đăng nhập';
@@ -122,6 +185,25 @@
       }
     }
     updateLoginLogoutLink();
+
+    // Dropdown menu mục lục chỉ mở khi click
+    document.addEventListener('DOMContentLoaded', function() {
+      const trigger = document.getElementById('catalog-nav-trigger');
+      const menu = document.getElementById('catalog-nav-menu');
+      if (trigger && menu) {
+        menu.style.display = 'none';
+        trigger.addEventListener('click', function(e) {
+          e.preventDefault();
+          menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+        });
+        // Đóng menu khi click ra ngoài
+        document.addEventListener('click', function(e) {
+          if (!trigger.contains(e.target) && !menu.contains(e.target)) {
+            menu.style.display = 'none';
+          }
+        });
+      }
+    });
   </script>
 </body>
 </html>

@@ -73,7 +73,6 @@ async function renderFamousAuthors() {
 
 // Hàm hiển thị popup hoặc section thông tin tác giả (dịch tiếng Việt)
 function showAuthorPopup({ name, image, bio, works }) {
-  // Nếu chưa có, tạo popup
   let popup = document.getElementById('author-popup');
   if (!popup) {
     popup = document.createElement('div');
@@ -90,15 +89,10 @@ function showAuthorPopup({ name, image, bio, works }) {
     popup.style.maxWidth = '90vw';
     popup.style.maxHeight = '90vh';
     popup.style.overflowY = 'auto';
-    popup.innerHTML = `<button id="close-author-popup" style="float:right;font-size:20px;background:none;border:none;cursor:pointer;">&times;</button>`;
     document.body.appendChild(popup);
-    document.getElementById('close-author-popup').onclick = () => popup.remove();
-  } else {
-    popup.innerHTML = `<button id="close-author-popup" style="float:right;font-size:20px;background:none;border:none;cursor:pointer;">&times;</button>`;
-    document.getElementById('close-author-popup').onclick = () => popup.remove();
   }
-
-  popup.innerHTML += `
+  popup.innerHTML = `
+    <button id="close-author-popup" style="float:right;font-size:20px;background:none;border:none;cursor:pointer;">&times;</button>
     <div style="text-align:center">
       <img src="${image}" alt="${name}" style="width:120px;height:120px;border-radius:50%;object-fit:cover;margin-bottom:12px;">
       <h2>${name}</h2>
@@ -109,6 +103,10 @@ function showAuthorPopup({ name, image, bio, works }) {
       </ul>
     </div>
   `;
+  // Gán lại sự kiện mỗi lần mở popup
+  document.getElementById('close-author-popup').onclick = () => {
+    popup.remove();
+  };
 }
 
 document.addEventListener('DOMContentLoaded', renderFamousAuthors);

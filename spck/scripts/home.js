@@ -1,5 +1,8 @@
 import { TMDB_API_KEY } from "./confgi.js";
 
+// Xóa trạng thái đăng nhập mỗi khi load trang home
+
+
 (async () => {
   const HomeAPIRoutes = {
     "Trending Movies": { url: "/trending/movie/week" },

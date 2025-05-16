@@ -9,7 +9,7 @@
   <body>
     <div class="form-wrapper">
       <h2>Sign In</h2>
-      <form action="index.html" method="GET">
+      <form id="login-form">
         <div class="form-control">
           <input id="email" type="text" required />
           <label>Email address</label>
@@ -30,6 +30,35 @@
       <p>New to Web bán sách? <a href="./register.html">Sign up now</a></p>
     </div>
     
+    <script>
+      localStorage.removeItem('isLoggedIn');
+      localStorage.removeItem('currentUser');
+      document.addEventListener('DOMContentLoaded', function() {
+        let form = document.getElementById("login-form");
+        form.addEventListener("submit", (e) => {
+          e.preventDefault();
+          if (!localStorage.getItem("users")) {
+            alert("No user found");
+          } else {
+            let users = JSON.parse(localStorage.getItem("users"));
+            let email = document.getElementById("email");
+            let password = document.getElementById("password");
+            let existingUser = users.find(
+              (index) =>
+                index.email === email.value.trim() &&
+                index.password === password.value.trim()
+            );
+            if (existingUser) {
+              localStorage.setItem("currentUser", JSON.stringify(existingUser));
+              localStorage.setItem('isLoggedIn', 'true');
+              window.location.href = 'index.html';
+            } else {
+              alert("Email or password is incorrect");
+            }
+          }
+        });
+      });
+    </script>
   </body> 
 
 </html>
