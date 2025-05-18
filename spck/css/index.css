@@ -1,103 +1,102 @@
 /* General Styles */
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
-    color: #333;
-    padding-top: 60px; /* Adjust this value based on your navbar height */
-  }
-  
-  a {
-    text-decoration: none;
-    color: inherit;
-  }
-  
-button {
-    cursor: pointer;
-  }
-  
-  /* Navbar Styles */
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #007bff;
-    padding: 10px 20px;
-    color: white;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  }
-  
-  .navbar .logo {
-    font-size: 24px;
-    font-weight: bold;
-  }
-  
-  .navbar .logo .highlight {
-    color: #ff4d4d;
-  }
-  
-  .nav-links {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-  }
-  
-  .nav-links a {
-    color: white;
-    font-size: 16px;
-    position: relative;
-  }
-  
-  .nav-links a:hover {
-    text-decoration: underline;
-  }
-  
+  background: linear-gradient(135deg, #f5efe6 0%, #e3e9f6 100%);
+  min-height: 100vh;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
 
-  
-  /* Hero Section */
-  .hero-section {
-    text-align: center;
-    padding: 50px 20px;
-    background-color: #e9ecef;
-  }
-  
-  .hero-section h1 {
-    font-size: 36px;
-    margin-bottom: 10px;
-  }
-  
-  .hero-section p {
-    font-size: 18px;
-    margin-bottom: 20px;
-  }
-  
-  .hero-section .btn {
-    background-color: #007bff;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-  }
-  
-  .hero-section .btn:hover {
-    background-color: #0056b3;
-  }
-  
-  /* Footer */
-  footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #007bff;
-    color: white;
-    margin-top: 20px;
-  }
-  /* Carousel Styles */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* Navbar Styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #007bff;
+  padding: 10px 20px;
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.navbar .logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.navbar .logo .highlight {
+  color: #ff4d4d;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: white;
+  font-size: 16px;
+  position: relative;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+/* Hero Section */
+.hero-section {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: #e9ecef;
+}
+
+.hero-section h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.hero-section p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.hero-section .btn {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.hero-section .btn:hover {
+  background-color: #0056b3;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  margin-top: 20px;
+}
+
+/* Carousel Styles */
 .carousel {
   position: relative;
   width: 80%;
@@ -156,6 +155,7 @@ button {
 .carousel-btn:hover {
   background-color: rgba(0, 0, 0, 0.8);
 }
+
 /* Famous Authors Section */
 .famous-authors {
   text-align: center;
@@ -441,7 +441,7 @@ button {
 }
 
 #search-btn:hover {
-  background: #0056b3;
+  background: #ffb347;
 }
 
 /* Main Catalog Section */
@@ -494,55 +494,19 @@ button {
 }
 .main-catalog a:hover {
   color: #fff;
-  background: #388e3c;
-  text-decoration: none;
+  background: #ffb347;
 }
-@media (max-width: 900px) {
-  .main-catalog {
-    flex-wrap: wrap;
-    gap: 20px;
-    padding: 20px 4px 12px 4px;
-  }
-  .catalog-column {
-    min-width: 160px;
-    margin: 0 4px;
-  }
-}
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .main-catalog {
     flex-direction: column;
-    align-items: stretch;
-    gap: 10px;
-    padding: 10px 2px 6px 2px;
+    gap: 16px;
+    padding: 16px 4px;
   }
-  .catalog-column {
-    min-width: 100%;
-    margin: 0 0 10px 0;
+  .carousel {
+    width: 98%;
   }
-}
-@media (max-width: 900px) {
-  .dropdown-content {
-    min-width: 90vw;
-    padding: 10px 2vw 10px 2vw;
-  }
-  .dropdown-content .catalog-column {
-    min-width: 120px;
-    margin: 0 4px;
-  }
-}
-@media (max-width: 600px) {
-  .dropdown-content {
-    min-width: 98vw;
-    left: 0;
-    right: 0;
-    padding: 2vw 1vw;
-  }
-  .dropdown-content .main-catalog {
+  .author-list, .book-list {
     flex-direction: column;
-    gap: 8px;
-  }
-  .dropdown-content .catalog-column {
-    min-width: 100%;
-    margin: 0 0 8px 0;
+    gap: 12px;
   }
 }
